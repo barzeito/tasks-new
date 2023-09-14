@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Task Board</title>
+  <script src="assets/script/script.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="assets/style/style.css" />
+</head>
+
+<body onload="onLoad()">
+  <!-- Popup header -->
+  <div class="popup-box">
+    <div class="popup">
+      <div class="content">
+        <div class="pop-header">
+          <p>Add new task</p>
+          <div class="icon">
+            <button class="btn" onclick="closePopup()"><i class="bi bi-x"></i></button>
+          </div>
+        </div>
+
+        <!-- The form in the Popup -->
+        <form id="taskForm" action="javascript:submitForm()">
+          <div class="row">
+            <label for="taskTitle">Title</label>
+            <input type="text" name="title" id="taskTitle" required />
+          </div>
+          <div class="row">
+            <label for="taskContent">Content</label>
+            <input type="text" name="content" id="taskContent" required />
+          </div>
+          <div class="row">
+            <label for="taskDate">Date</label>
+            <input type="date" name="date" id="taskDate" required />
+          </div>
+          <div class="row">
+            <label for="taskTime">Time</label>
+            <input type="time" name="time" id="taskTime" required />
+          </div>
+          <input type="submit" value="Add Task" class="submitButton fadeIn-task" />
+          <button onclick="clearFrom(event)">Clear Form</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Open Popup button box -->
+  <header>
+    <h1 class="top-title">My Tasks Board</h1>
+    <div class="add-wrapper">
+      <li class="add-box">
+        <div class="icon">
+          <button class="btn" onclick="openPopup()"><i class="bi bi-plus-lg"></i></button>
+        </div>
+        <p>Add new task</p>
+      </li>
+      <button class="clearBtn" onclick="clearTasks()">Clear all tasks</button>
+    </div>
+  </header>
+
+  <!-- Tasks Title -->
+  <h1 class="middle-title">My Tasks</h1>
+  <!-- The Tasks -->
+  <section>
+    <div id="wrapper" class="wrapper"></div>
+  </section>
+
+
+</body>
+
+</html>
